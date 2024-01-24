@@ -15,8 +15,8 @@
                 <div class="texto-area">
                     <textarea class="ingrese-el-texto-aqui" id="inputText" placeholder="Ingrese el texto aqui"></textarea>
                     <div class="botones">
-                        <button class="boton-encriptar">Encriptar</button>
-                        <button class="boton-desencriptar">Desencriptar</button>
+                        <button class="boton-encriptar" onclick="processText('encrypt')">Encriptar</button>
+                        <button class="boton-desencriptar" onclick="processText('dencrypt')">Desencriptar</button>
                     </div>
                 </div>
 
@@ -30,8 +30,8 @@
                     </div>
                 </div>
                 <div class="rectangle-2">
-                    <div class="contenedor-mensaje" id="mensaje">
-                        <label class="mensaje">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.</label>
+                    <div class="contenedor-mensaje" id="mensaje-mostrar">
+                        <label class="mensaje" id="outputText"></label>
                     </div>
                 </div>
             </div>
