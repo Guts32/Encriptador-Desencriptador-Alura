@@ -31,7 +31,10 @@
                 </div>
                 <div class="rectangle-2">
                     <div class="contenedor-mensaje" id="mensaje-mostrar">
-                        <label class="mensaje" id="outputText"></label>
+                        <textarea class="mensaje" id="outputText" readonly></textarea>
+                        <div class="boton-copiar-contenedor">
+                            <button class="boton-copiar" onclick="copyToClipboard()">Copiar</button>
+                        </div>
                     </div>
                 </div>
             </div>

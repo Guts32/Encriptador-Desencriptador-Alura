@@ -40,6 +40,7 @@
     left: auto;
     right: 40px;
     top: 40px;
+    visibility: hidden;
 }
 
 .rectangle-2 {
@@ -47,7 +48,7 @@
   left: auto;
   right: 40px;
   top: 40px;
-  visibility: hidden;
+  
 }
 
 .contenedor-logo{
@@ -193,17 +194,57 @@
 
 .contenedor-mensaje{
     width: 336px;
-    height: 781px;
+    height: 650px;
     flex-shrink: 0;
-    margin: 32px;
+    margin-left: 30px;
+    margin-top: -150px;
 }
 
-.mensaje{
+.mensaje {
     color: var(--Gray-gray-400, #495057);
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 36px */
-    margin: 25px;
+    margin: 0;
+    padding: 20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: auto; /* Opcional: Agregar barra de desplazamiento si es necesario */
+    background:transparent;
+    border: none; 
+}
+
+
+.boton-copiar-contenedor{
+    display: flex;
+    width: 680px;
+    height: 0;
+    align-items: stretch;
+}
+
+.boton-copiar{
+    display: flex;
+    justify-content: center;
+    width: 336px;
+    padding: 24px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    border: 1px solid var(--Dark-blue-dark-blue-300, #0A3871);
+    color: var(--Dark-blue-dark-blue-300, #0A3871);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.boton-copiar:hover {
+    cursor: pointer;
+}
+
+.boton-copiar:active {
+    background: #e3e7ec;
 }
