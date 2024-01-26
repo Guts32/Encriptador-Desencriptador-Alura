@@ -1,8 +1,15 @@
 //funcion para procesar el texto y seleccionar si se va a encriptar o descencriptar
 function processText(operation) {
+
     //creando variable y agregando el valor del texto
-    const inputText = document.getElementById('inputText').value.toLowerCase();
+    const inputText = document.getElementById('inputText').value;
     let outputText = '';
+
+    // Verificar si hay letras mayúsculas o acentos en el texto
+    if (hasUpperCaseOrAccent(inputText)) {
+        alert('El texto no debe contener letras mayúsculas o acentos.');
+        return;
+    }
 
     //validacion para elegir si se eligio encriptar o no el mensaje
     if (operation === 'encrypt') {
@@ -15,8 +22,10 @@ function processText(operation) {
 
     //agregando el valor del mensaje procesado al label
     document.getElementById('outputText').textContent = outputText;
+
     //ocultando imagen con el texto de no mensajes
     document.getElementById('no-mensaje').style.visibility = 'hidden';
+
     //mostrando el mensaje procesado
     document.getElementById('mensaje-mostrar').style.visibility = 'visible';
     
@@ -54,4 +63,19 @@ function copyToClipboard() {
     document.body.removeChild(textarea);
 
     alert('Texto copiado al portapapeles');
+}
+
+
+function hasUpperCaseOrAccent(text) {
+    // Verificar si hay letras mayúsculas
+    if (/[A-Z]/.test(text)) {
+        return true;
+    }
+
+    // Verificar si hay letras con acentos
+    if (/[áéíóúü]/.test(text)) {
+        return true;
+    }
+
+    return false;
 }
