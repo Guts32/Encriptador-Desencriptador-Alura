@@ -16,7 +16,7 @@
     .encriptador-1-desktop {
       background: var(--lightblue-light-blue-100, #f3f5fc);
       position: relative;
-      overflow: hidden;
+      overflow: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
