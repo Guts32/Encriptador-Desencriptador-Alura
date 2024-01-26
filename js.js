@@ -51,18 +51,18 @@ function decryptText(text) {
 //funciona para copiar texto
 function copyToClipboard() {
     const outputText = document.getElementById('outputText').textContent;
-    // Crear un elemento textarea temporal
-    const textarea = document.createElement('textarea');
-    textarea.value = outputText;
-    // Agregar el textarea al cuerpo del documento
-    document.body.appendChild(textarea);
-    // Seleccionar y copiar el texto dentro del textarea
-    textarea.select();
-    document.execCommand('copy');
-    // Eliminar el textarea temporal
-    document.body.removeChild(textarea);
 
-    alert('Texto copiado al portapapeles');
+    // Crear un área de transferencia
+    const clipboard = navigator.clipboard;
+
+    // Intentar copiar al portapapeles
+    clipboard.writeText(outputText)
+        .then(() => {
+            alert('Texto copiado al portapapeles');
+        })
+        .catch(err => {
+            console.error('No se pudo copiar al portapapeles: ', err);
+        });
 }
 
 
